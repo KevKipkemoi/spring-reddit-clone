@@ -23,7 +23,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     @Transactional(readOnly = true)
-    public UserDetails loadByUsername(String username) {
+    public UserDetails loadUserByUsername(String username) {
         Optional<User> userOptional = userRepository.findByUsername(username);
         User user = userOptional.orElseThrow(
                 () -> new UsernameNotFoundException(
