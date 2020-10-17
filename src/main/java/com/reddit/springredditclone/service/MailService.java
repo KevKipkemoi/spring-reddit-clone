@@ -1,6 +1,5 @@
 package com.reddit.springredditclone.service;
 
-import com.reddit.springredditclone.SpringRedditCloneApplication;
 import com.reddit.springredditclone.exception.SpringRedditException;
 import com.reddit.springredditclone.model.NotificationEmail;
 import lombok.AllArgsConstructor;
@@ -26,7 +25,7 @@ public class MailService {
             messageHelper.setFrom("springreddit@email.com");
             messageHelper.setTo(notificationEmail.getRecipient());
             messageHelper.setSubject(notificationEmail.getSubject());
-            messageHelper.setText(mailContentBuilder.build(notificationEmail.getBody()));
+            messageHelper.setText(notificationEmail.getBody());
         };
 
         try {
