@@ -2,6 +2,7 @@ package com.reddit.springredditclone.service;
 
 import com.reddit.springredditclone.exception.SpringRedditException;
 import com.reddit.springredditclone.model.RefreshToken;
+import com.reddit.springredditclone.repository.RefreshTokenRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
