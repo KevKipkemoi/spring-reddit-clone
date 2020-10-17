@@ -45,7 +45,7 @@ public class AuthService {
     @Transactional
     public void signup(RegisterRequest registerRequest) {
         User user = new User();
-        user.setUserName(registerRequest.getUsername());
+        user.setUsername(registerRequest.getUsername());
         user.setEmail(registerRequest.getEmail());
         user.setPassword(encodePassword(registerRequest.getPassword()));
         user.setCreated(now());
@@ -83,7 +83,7 @@ public class AuthService {
 
     @Transactional
     private void fetchUserAndEnable(VerificationToken verificationToken) {
-        String username = verificationToken.getUser().getUserName();
+        String username = verificationToken.getUser().getUsername();
         User user = userRepository.findByUsername(username).orElseThrow(
                 () -> new SpringRedditException("User not found with ID: " + username)
         );
