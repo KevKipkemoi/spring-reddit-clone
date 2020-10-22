@@ -82,4 +82,9 @@ public class JwtProvider {
     public Long getJwtExpirationInMillis() {
         return jwtExpirationInMillis;
     }
+
+    public boolean validateToken(String jwt) {
+        parser().setSigningKey(getPublicKey()).parseClaimsJws(jwt);
+        return true;
+    }
 }
