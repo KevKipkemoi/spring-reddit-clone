@@ -14,7 +14,7 @@ public interface PostMapper {
     @Mapping(target = "subreddit", source = "subreddit")
     @Mapping(target = "user", source = "user")
     @Mapping(target = "description", source = "postRequest.description")
-    Post map(PostRequest postRequest, Subreddit subreddit, User user);
+    public abstract Post map(PostRequest postRequest, Subreddit subreddit, User user);
 
     @Mapping(target = "id", source = "postId")
     @Mapping(target = "postName", source = "postName")
